@@ -1,7 +1,5 @@
-import pprint
 import git
 import dvc.api
-from git.exc import RepositoryDirtyError
 import pandas as pd
 import mlflow
 
@@ -59,14 +57,15 @@ if not repo.bare:
     print(commits)
 
     commit_hexsha = get_commit_hexsha_by_tag(repo, REQUIRED_TAG)
-    print(commit_hexsha)
+    print('HHHHHHHHHHHHHHH', commit_hexsha)
     resource_url = dvc.api.get_url(
         path='data/Mall_Customers.csv',
         repo=REPO_PATH,
         # rev=commit_hexsha,
         remote='dvc-RAM-remote'
     )
-    print(f"RAM==================== {resource_url} ====================")
+    print("==================== resource_url ====================")
+    print(resource_url)
 
     # df = pd.read_csv(resource_url, sep=',')
     # print(len(df))

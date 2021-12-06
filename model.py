@@ -10,7 +10,7 @@ from sklearn.metrics import r2_score
 
 # https://drive.google.com/file/d/1KnyWpHrRpDHvffW0Ysh209HZYe_US3hZ/view?usp=sharing
 
-df = pd.read_csv("./Mall_Customers.csv")
+df = pd.read_csv("./data/Mall_Customers.csv")
 le = LabelEncoder()
 df['Genre'] = le.fit_transform(df['Genre'].values)
 df['Age_<=_40'] = np.where(df['Age'] <= 40, True, False)

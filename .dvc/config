@@ -1,0 +1,4 @@
+[core]
+    remote = dvc-ram-remote
+['remote "dvc-ram-remote"']
+    url = gdrive://1vSVT0oq6I4rb6Ho2AzQMKQ7Z6X_nUwqy/data

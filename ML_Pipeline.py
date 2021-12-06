@@ -3,7 +3,7 @@ import dvc.api
 import pandas as pd
 import mlflow
 
-REPO_PATH = '.git'
+REPO_PATH = './'
 REQUIRED_TAG = 'v1'
 repo = git.Repo(REPO_PATH)
 
@@ -57,19 +57,20 @@ if not repo.bare:
     print(commits)
 
     commit_hexsha = get_commit_hexsha_by_tag(repo, REQUIRED_TAG)
-    print('HHHHHHHHHHHHHHH', commit_hexsha)
+    print('commit_hexsha: ', commit_hexsha)
     resource_url = dvc.api.get_url(
         path='data/Mall_Customers.csv',
         repo=REPO_PATH,
-        # rev=commit_hexsha,
-        remote='dvc-RAM-remote'
+        rev=commit_hexsha,
+        # rev=REQUIRED_TAG, # OR commit_hexsha
+        # remote='dvc-RAM-remote'
     )
     print("==================== resource_url ====================")
     print(resource_url)
 
-    # df = pd.read_csv(resource_url, sep=',')
-    # print(len(df))
-#     display(df)
+    df = pd.read_csv(resource_url, sep=',')
+    print(len(df))
+    display(df)
 
 #     mlflow.set_tracking_uri('http://127.0.0.1:5000')
 #     mlflow.set_experiment("/RAM-Pipeline")

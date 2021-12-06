@@ -4,7 +4,7 @@ import pandas as pd
 import mlflow
 
 REPO_PATH = './'
-VERSION = 'v6'
+VERSION = 'v8'
 repo = git.Repo(REPO_PATH)
 
 
@@ -72,11 +72,11 @@ if not repo.bare:
     print(len(df))
     print(df)
 
-#     mlflow.set_tracking_uri('http://127.0.0.1:5000')
-#     mlflow.set_experiment("/RAM-Pipeline")
-#     with mlflow.start_run():
-#         mlflow.log_param("Requested Version", VERSION)
-#         mlflow.log_param("Requested Version path", resource_url)
-#         mlflow.log_param("Requested Version Count", len(df))
-# else:
-#     print('Could not load repository at {} :'.format('repo_path'))
+    mlflow.set_tracking_uri('http://127.0.0.1:5000')
+    mlflow.set_experiment("/RAM-Pipeline")
+    with mlflow.start_run():
+        mlflow.log_param("Requested Version", VERSION)
+        mlflow.log_param("Requested Version path", resource_url)
+        mlflow.log_param("Requested Version Count", len(df))
+else:
+    print('Could not load repository at {} :'.format('repo_path'))

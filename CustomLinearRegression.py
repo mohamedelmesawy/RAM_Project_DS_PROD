@@ -53,7 +53,7 @@ def train_and_evaluate(normalize=False):
     X, y = preprocessing()
     model = fit_model(X, y, normalize)
     score = evaluate(model, X, y)
-    return score
+    return score, model
 
 # Testing
 # input_to_predict = np.array([1, 1, 44, 0])

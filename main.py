@@ -1,6 +1,7 @@
 from flask import Flask
 import mlflow
-import model
+import mlflow.sklearn
+import CustomLinearRegression
 
 
 # ML-FLOW set to your server URI
@@ -18,14 +19,23 @@ def hello():
 
 @app.route("/prediction")
 def prediction():
-    score = model.train_and_evaluate(normalize=True)
+    score, model = CustomLinearRegression.train_and_evaluate(normalize=True)
+
     with mlflow.start_run():
         mlflow.log_param("LR-normalize", True)
         mlflow.log_metric("R2-score", score)
+
+        # Logging training code
+        mlflow.log_artifact(local_path='./data/Mall_Customers.csv')
+        # Logging model to MLFlow
+        mlflow.log_artifact(local_path='./CustomLinearRegression.py')
+        mlflow.sklearn.log_model(sk_model=model,
+                                 artifact_path='LR-Model')
+
     return("R2-Score: {:.2%}".format(score))
 
 
-@app.route("/admin")
+@ app.route("/admin")
 def hello_admin():
     return("Admin page!")
 

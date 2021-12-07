@@ -39,11 +39,6 @@ def get_commit_hexsha_by_tag(repo, required_tag):
             return str(tag.commit.hexsha)
 
 
-# print_repository_info(repo)
-# x = print_commit_data(list(repo.iter_commits('main'))[0], 'v1')
-# print(x)
-
-
 # check that the repository loaded correctly
 if not repo.bare:
     print('Repo is successfully loaded.')

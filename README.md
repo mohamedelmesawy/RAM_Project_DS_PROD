@@ -63,11 +63,11 @@ $ git push origin
 ## RUN the Project ##
 
 ```bash
-# Start ML-FLow Server
-$ mlflow ui
-
 # Clone this project
 $ git clone https://github.com/mohamedelmesawy/RAM_Project_DS_PROD.git
+
+# Start ML-FLow Server
+$ mlflow ui
 
 # Run the FLASK Linear Regression Application 
 $ python ./main.py
@@ -79,5 +79,7 @@ $ python ./ML_Pipeline.py
 ![screen_01](https://user-images.githubusercontent.com/28452932/144993391-a565d398-7804-4a60-8edf-9696c86b19f8.jpg)
 
 ![screen_02](https://user-images.githubusercontent.com/28452932/144993409-39a02e9d-3995-4859-a302-7363d417677e.jpg)
+
 ![screen_03](https://user-images.githubusercontent.com/28452932/144993421-76f15b29-0302-40c4-b2eb-24146ac0ca6e.jpg)
+
 ![screen_04](https://user-images.githubusercontent.com/28452932/144995475-1e8545bb-7e48-4fa6-94bc-d85e1336aeac.jpg)

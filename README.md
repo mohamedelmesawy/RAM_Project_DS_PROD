@@ -1,4 +1,4 @@
-# RAM_Project_DS_PROD
+# Data Science in Production Project
 
 
 ## Starting Commands ##
@@ -55,9 +55,6 @@ $ dvc remote list
 $ git add .dvc/config
 $ git commit -m 'adding another DVC_REPO'
 $ git push origin
-
-
-$ mlflow ui
 ```
 
 <hr>
@@ -66,6 +63,9 @@ $ mlflow ui
 ## RUN the Project ##
 
 ```bash
+# Start ML-FLow Server
+$ mlflow ui
+
 # Clone this project
 $ git clone https://github.com/mohamedelmesawy/RAM_Project_DS_PROD.git
 
